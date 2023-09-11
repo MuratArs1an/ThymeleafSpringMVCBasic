@@ -19,12 +19,19 @@
 	<h3>Employee Directory</h3>
 	<hr>
 
+	<!--add button / th:href referance to path new html page -->
+	<a th:href="@{/employees/showFormForAdd}"
+	class="btn btn-primary btn-sm mb-3">
+		Add Employee
+	</a>
+
 	<table class="table table-bordered table-striped">
 		<thead class="table-dark">
 			<tr>
 				<th>First Name</th>
 				<th>Last Name</th>
 				<th>Email</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		
@@ -33,7 +40,14 @@
 			
 				<td th:text="${tempEmployee.firstName}" />	
 				<td th:text="${tempEmployee.lastName}" />	
-				<td th:text="${tempEmployee.email}" />	
+				<td th:text="${tempEmployee.email}" />
+				<td>
+					<a th:href="@{/employees/showFormForUpdate(employeeId=${tempEmployee.id})}"
+					   class="btn btn-info btn-sm">
+						Update
+					</a>
+				</td>
+
 				
 			</tr>
 		</tbody>		
