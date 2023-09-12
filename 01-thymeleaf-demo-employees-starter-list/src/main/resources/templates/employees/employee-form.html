@@ -20,6 +20,8 @@
         <!--th:object kısmına entity yazıyoruz $ ile -->
         <!--th:field kısmına entity atributeları yazıyoruz * ile  -->
         <form action="#" th:action="@{/employees/save}" th:object="${employee}" method="POST">
+            <!--Add hidden form field to handle the update -->
+            <input type="hidden" th:field="*{id}">
             <input type="text" th:field="*{firstName}" class="form-control mb-4 w-25" placeholder="First Name">
             <input type="text" th:field="*{lastName}" class="form-control mb-4 w-25" placeholder="Last Name">
             <input type="text" th:field="*{email}" class="form-control mb-4 w-25" placeholder="E-Mail">
